@@ -11,7 +11,6 @@ public class App {
         System.out.println("> Defina tipo de polígono a ser calculado: ");
         System.out.println("> 1. Quadrado \n 2. Retângulo \n 3. Triângulo \n 4. Círculo  ");
         int poligono = scanner.nextInt();
-        System.out.println(poligono);
 
         if (poligono == 1) {
             System.out.println("> Insira o lado do quadrado: ");
@@ -50,7 +49,7 @@ public class App {
             System.out.printf("> A área do círculo é: %.2f metros quadrados", areaCircle);
 
         } else {
-            System.out.println("> Erro");
+            System.out.println("> Erro; reinicializar");
         }
         
     } 

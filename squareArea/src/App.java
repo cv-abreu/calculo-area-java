@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class App {
+    
     public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
@@ -9,37 +10,47 @@ public class App {
 
         System.out.println("> Defina tipo de polígono a ser calculado: ");
         System.out.println("> 1. Quadrado \n 2. Retângulo \n 3. Triângulo \n 4. Círculo  ");
-        var poligono = scanner.nextLine();
-        
+        int poligono = scanner.nextInt();
+        System.out.println(poligono);
 
-        if (poligono == "T") {
+        if (poligono == 1) {
+            System.out.println("> Insira o lado do quadrado: ");
+            var side = scanner.nextFloat();
+            var areaSquare = side*side;
+            System.out.printf("> A área do quadrado é: %.2f metros quadrados", areaSquare);
+
+        } else if (poligono == 2) {
+
+            System.out.println("> Insira o comprimento do retângulo: ");
+            var comp = scanner.nextFloat();
+            System.out.println("> Insira a altura do retângulo:");
+            var altura = scanner.nextFloat();
+            var areaRetangle = comp * altura;
+
+            System.out.printf("> A área do retângulo é: %.2f metros quadrados ", areaRetangle);
+
+
+        } else if  (poligono ==  3){
 
             System.out.println("> Insira a altura do triângulo:");
-            int altura = scanner.nextInt();
+            var altura = scanner.nextFloat();
             System.out.println("> Insira a base do triângulo:");
-            int base = scanner.nextInt();
-            var areaTriangle = base * altura /2;
+            var base = scanner.nextFloat();
+            var areaTriangle = (base * altura) /2;
 
-            System.out.printf("> A área do triângulo é: %d metros quadrados " ,areaTriangle);
+            System.out.printf("> A área do triângulo é: %.2f metros quadrados" , areaTriangle);
 
-
-        } else if (poligono == "4") {
+        
+        } else if (poligono ==4) {
 
             System.out.println("> Insira raio do Círculo:");
-            int raio = scanner.nextInt();
-            var areaCircle = 3.14 *(raio * raio);
-
-            System.out.printf("> A área do círculo é: %d metros quadrados", areaCircle);
+            var raio = scanner.nextFloat();
+            var areaCircle = 3.14 * (raio * raio);
+            
+            System.out.printf("> A área do círculo é: %.2f metros quadrados", areaCircle);
 
         } else {
-
-            System.out.println("> Insira tamanho do lado: ");
-            int side = scanner.nextInt();
-            var area = side * side;
-
-            System.out.printf("> A área do polígono é: %d metros quadrados ", area);
-
-
+            System.out.println("> Erro");
         }
         
     } 
